@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Controlador2D))]
 public class Slime : MonoBehaviour
 {
     public float tempoEntrePulos = 2f;
@@ -13,6 +14,8 @@ public class Slime : MonoBehaviour
     private Vector2 velocidade;
     
     private Controlador2D controlador;
+
+    public int vida = 1;
 
     void Awake()
     {
@@ -41,5 +44,18 @@ public class Slime : MonoBehaviour
 
         velocidade.y += gravidade * Time.deltaTime;
         controlador.Mover(velocidade * Time.deltaTime);
+    }
+
+    public void ReceberDano(int quantidadeDano)
+    {
+        vida -= quantidadeDano;
+
+        if (vida <= 0)
+            Morrer();
+    }
+
+    private void Morrer()
+    {
+        Destroy(this.gameObject);
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Faz com que a classe apenas possa ser posta em um objeto caso o componente BoxCollider2D exista dentro dela. Caso o componente não exista, ao adicionar a nossa classe ele será adicionado também.
+[RequireComponent(typeof(BoxCollider2D))]
 public class Controlador2D : MonoBehaviour
 {
     // Máscara que usaremos para detectar nossas plataformas. Apenas os objetos com essa máscara serão atingidos pelos nossos raios.
@@ -30,7 +32,7 @@ public class Controlador2D : MonoBehaviour
     // O método Awake() é chamado assim que o objeto entra em cena, diferentemente de Start() que só é chamado quando o script está habilitado.
     // Você pode procurar mais informações sobre a diferença entre Start, Awake, Update, FixedUpdate e LateUpdate na documentação de Unity.
     // https://docs.unity3d.com/ScriptReference/MonoBehaviour.Awake.html
-    void Start()
+    void Awake()
     {
         // Inicializa nosso colisor ao pegar um componente (BoxCollider2D) do nosso objeto.
         colisor = GetComponent<BoxCollider2D>();

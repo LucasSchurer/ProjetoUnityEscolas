@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Controlador2D), typeof(Rigidbody2D))]
 public class Jogador : MonoBehaviour
 {
     public float alturaPulo = 4f;
@@ -19,7 +20,10 @@ public class Jogador : MonoBehaviour
 
     public bool estaNoChao;
 
-    // Start is called before the first frame update
+    public int vida = 10;
+
+    public Direcao direcaoOlhar = Direcao.Direita;
+
     void Awake()
     {
         controlador = GetComponent<Controlador2D>();
@@ -35,10 +39,10 @@ public class Jogador : MonoBehaviour
     void Update()
     {
         // Experimente o código e depois remova o comentário do trecho abaixo. Consegue notar o que mudou? *Para remover múltiplas linhas remova o /* e o */.
-        /*
+        
         if (controlador.colisoes.abaixo)
             velocidade.y = 0f;
-        */
+        
 
         // Armazena o estado do personagem em um atributo dessa classe. Você consegue visualizar ele no Inspector enquanto o jogo roda :D Útil para entender se a sua movimentação está correta.
         estaNoChao = controlador.colisoes.abaixo;
@@ -64,5 +68,72 @@ public class Jogador : MonoBehaviour
 
         // E finalmente move nosso personagem.
         controlador.Mover(velocidade * Time.deltaTime);
+
+        AtualizarDirecao(inputHorizontal);
+    }
+
+    // Método que é ativado toda vez que nosso personagem tem contato com outros objetos.
+    void OnTriggerEnter2D(Collider2D objeto)
+    {
+        // Se nosso objeto possuír a tag Inimigo podemos realizar mais coisas
+        if (objeto.tag == "Inimigo")
+        {
+            // Mostra no console o nome do objeto
+            print(objeto.name);    
+
+            // Caso a nossa posição y for maior que a posição y do nosso inimigo, vamos matá-lo e dar um pulo.
+            if (transform.position.y > objeto.transform.position.y)
+            {
+                objeto.gameObject.SendMessage("ReceberDano", 1);
+                velocidade.y = velocidadePulo;
+            }
+            else
+                ReceberDano(1);
+        }
+    }
+
+    // Método onde podemos receber dano e também levar um empurrão na direção contrária do inimigo ao ser atingido.
+    public void ReceberDano(int quantidadeDano)
+    {
+        // Remove nossa vida e checa se não morremos
+        vida -= quantidadeDano;
+
+        if (vida <= 0)
+            Morrer();
+
+        // Movemos nosso jogador para a direção contrária de onde está olhando ao receber dano.
+        float forcaRecuo = 15f;
+        velocidade.x = forcaRecuo * (direcaoOlhar == Direcao.Direita ? -1 : 1);
+    }
+
+    private void Morrer()
+    {
+        Destroy(this.gameObject);
+    }
+
+    private void AtualizarDirecao(float inputHorizontal)
+    {
+        // Caso estejamos nos movimentando para direita rotacione para direita (apenas se não estava olhando para lá em primeiro lugar!)
+        if (inputHorizontal == 1)
+        {
+            // Se não estivermos olhando para a direita, gira nosso personagem para a direita e atualiza nosso olharDirecao.
+            if (direcaoOlhar != Direcao.Direita)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);   
+                direcaoOlhar = Direcao.Direita;
+            }
+                
+        } 
+        else if (inputHorizontal == -1)
+        {
+            // Se não estivermos olhando para a esquerda, gira nosso personagem a esquerda e atualiza nosso olharDirecao.
+            if (direcaoOlhar != Direcao.Esquerda)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                direcaoOlhar = Direcao.Esquerda;
+            }
+        }
     }
 }
+
+public enum Direcao { Direita, Esquerda };

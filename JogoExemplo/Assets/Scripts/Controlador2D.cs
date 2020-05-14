@@ -21,7 +21,8 @@ public class Controlador2D : MonoBehaviour
     float espacamentoRaiosVerticais;
 
     // Referência para nosso componente BoxCollider2D.
-    private BoxCollider2D colisor;
+    [HideInInspector]
+    public BoxCollider2D colisor;
 
     // Objeto que contém nossa estrutura para definir as origens dos nossos raios. É calculado toda vez que decidimos nos movimentar.
     private OrigensRaycast origensRaycast;

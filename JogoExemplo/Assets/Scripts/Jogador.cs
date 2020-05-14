@@ -20,9 +20,14 @@ public class Jogador : MonoBehaviour
 
     public bool estaNoChao;
 
-    public int vida = 10;
+    public int vidaAtual = 3;
+    public int vidaMaxima = 3;
 
     public Direcao direcaoOlhar = Direcao.Direita;
+
+    public ControladorJogo controladorJogo;
+
+    public int quantidadeMoedas = 0;
 
     void Awake()
     {
@@ -82,13 +87,25 @@ public class Jogador : MonoBehaviour
             print(objeto.name);    
 
             // Caso a nossa posição y for maior que a posição y do nosso inimigo, vamos matá-lo e dar um pulo.
-            if (transform.position.y > objeto.transform.position.y)
+            if ((transform.position.y - controlador.colisor.size.y/2) > objeto.transform.position.y)
             {
                 objeto.gameObject.SendMessage("ReceberDano", 1);
                 velocidade.y = velocidadePulo;
+                controlador.Mover(velocidade * Time.deltaTime);
             }
             else
                 ReceberDano(1);
+        }
+
+        if (objeto.tag == "FimFase")
+        {
+            controladorJogo.AvancarNivel();
+        }
+
+        if (objeto.tag == "Moeda")
+        {
+            quantidadeMoedas++;
+            Destroy(objeto.gameObject);
         }
     }
 
@@ -96,9 +113,9 @@ public class Jogador : MonoBehaviour
     public void ReceberDano(int quantidadeDano)
     {
         // Remove nossa vida e checa se não morremos
-        vida -= quantidadeDano;
+        vidaAtual -= quantidadeDano;
 
-        if (vida <= 0)
+        if (vidaAtual <= 0)
             Morrer();
 
         // Movemos nosso jogador para a direção contrária de onde está olhando ao receber dano.

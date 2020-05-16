@@ -29,9 +29,16 @@ public class Jogador : MonoBehaviour
 
     public int quantidadeMoedas = 0;
 
+    public bool estaPulando;
+    public bool estaCorrendo;
+    public bool estaParado;
+
+    private Animator animador;
+
     void Awake()
     {
         controlador = GetComponent<Controlador2D>();
+        animador = GetComponent<Animator>();
 
         // Você consegue entender o que estamos fazendo abaixo?
         // Dica: S = S0 + v0.t + (a.t²)/2
@@ -47,6 +54,7 @@ public class Jogador : MonoBehaviour
         
         if (controlador.colisoes.abaixo)
             velocidade.y = 0f;
+            
         
 
         // Armazena o estado do personagem em um atributo dessa classe. Você consegue visualizar ele no Inspector enquanto o jogo roda :D Útil para entender se a sua movimentação está correta.
@@ -55,11 +63,43 @@ public class Jogador : MonoBehaviour
         // Armazena os Inputs verticais do jogador (a, d, seta para esquerda e direita)
         float inputHorizontal = Input.GetAxisRaw("Horizontal");
 
+        if (controlador.colisoes.abaixo)
+        {
+            if (inputHorizontal != 0)
+            {
+                estaCorrendo = true;
+                estaParado = false;
+            } 
+            else
+            {
+                estaCorrendo = false;
+                estaParado = true;
+            }
+
+            estaPulando = false;
+        } 
+        else
+        {
+           estaPulando = true;
+           estaCorrendo = false;
+           estaParado = false; 
+        }
+
+        animador.SetBool("estaParado", estaParado);
+        animador.SetBool("estaCorrendo", estaCorrendo);
+        animador.SetBool("estaPulando", estaPulando);
+
         // Checa se a seta para cima foi apertada e se o jogador está no chão. Caso tudo seja verdadeiro, modifique nossa velocidade.y para podermos pular.
         // https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/operators/boolean-logical-operators
         // http://www.inf.ufpr.br/cursos/ci067/Docs/NotasAula/notas-6_Operadores_Logicos.html
         if(Input.GetKeyDown(KeyCode.UpArrow) && controlador.colisoes.abaixo)
+        {
             velocidade.y = velocidadePulo;
+            estaPulando = true;
+            estaCorrendo = false;
+            estaNoChao = false;
+        }
+            
 
         // Você consegue entender o que o código abaixo faz?
         // Tente substituír as duas linhas abaixo por a seguinte:

@@ -17,9 +17,16 @@ public class Slime : MonoBehaviour
 
     public int vida = 1;
 
+    public bool estaParado = true;
+    public bool estaPulando = false;
+    public bool estaCaindo = false;
+
+    private Animator animador;
+
     void Awake()
     {
         controlador = GetComponent<Controlador2D>();
+        animador = GetComponent<Animator>();
 
         gravidade = -(alturaPulo * 2) / Mathf.Pow(tempoParaApicePulo, 2);
         velocidadePulo = Mathf.Abs(gravidade) * tempoParaApicePulo;
@@ -41,7 +48,29 @@ public class Slime : MonoBehaviour
         if (contadorTempoEntrePulos > 0)
             contadorTempoEntrePulos -= Time.deltaTime;
             
+        if (controlador.colisoes.abaixo)
+        {
+            estaPulando = false;
+            estaParado = true;
+            estaCaindo = false;
+        } 
+        else if (velocidade.y <= 0)
+        {
+           estaPulando = false;
+           estaParado = false; 
+           estaCaindo = true;
+        } 
+        else
+        {
+            estaPulando = true;
+            estaParado = false;
+            estaCaindo = false;
+        }
 
+        animador.SetBool("estaParado", estaParado);
+        animador.SetBool("estaPulando", estaPulando);
+        animador.SetBool("estaCaindo", estaCaindo);
+        
         velocidade.y += gravidade * Time.deltaTime;
         controlador.Mover(velocidade * Time.deltaTime);
     }

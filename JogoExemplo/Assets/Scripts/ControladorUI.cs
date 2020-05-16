@@ -32,7 +32,9 @@ public class ControladorUI : MonoBehaviour
         }
 
         int quantidadeMoedas = jogador.quantidadeMoedas;
-        moedas.text = "Moedas: ";
+        moedas.text = "x";
+        if (quantidadeMoedas < 10)
+            moedas.text += "0";
         moedas.text += quantidadeMoedas.ToString();
     }
 }

@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1561977107
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7282886668606283007, guid: 9e94c230fce37a74cb3793a67fb873ff,
     type: 3}
@@ -118,18 +118,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.039361417, y: -0.7509462}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
+    oldSize: {x: 2.5, y: 1.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4915075, y: 1.6981074}
+  m_Size: {x: 2.5, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &4500711155153113507
 MonoBehaviour:
@@ -161,9 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f309af7727df44ca3afaa9fad1567e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoEntrePulos: 4
-  alturaPulo: 4
-  tempoParaApicePulo: 0.4
+  tempoEntrePulos: 5
+  alturaPulo: 5
+  tempoParaApicePulo: 0.6
   vida: 1
   estaParado: 1
   estaPulando: 0
+  estaCaindo: 0

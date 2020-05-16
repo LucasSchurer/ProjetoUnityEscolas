@@ -44,3 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 404231601
+    locked: 0
+  - name: Plataformas
+    uniqueID: 2620863243
+    locked: 0
+  - name: Moedas
+    uniqueID: 3594343363
+    locked: 0
+  - name: Inimigos
+    uniqueID: 2732990189
+    locked: 0
+  - name: Player
+    uniqueID: 2253770499
+    locked: 0

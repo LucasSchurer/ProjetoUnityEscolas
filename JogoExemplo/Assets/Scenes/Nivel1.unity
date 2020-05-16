@@ -301,6 +301,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1812165575}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &258298071 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4409177746056599232, guid: 7088182a838a3554d8e1850164a280bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1812165575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &258298072
 Animator:
   serializedVersion: 3
@@ -592,21 +598,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500711155153113504, guid: 841fa9757669c1e4e83f0aface68082c,
-        type: 3}
-      propertyPath: tempoEntrePulos
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500711155153113504, guid: 841fa9757669c1e4e83f0aface68082c,
-        type: 3}
-      propertyPath: alturaPulo
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4500711155153113504, guid: 841fa9757669c1e4e83f0aface68082c,
-        type: 3}
-      propertyPath: tempoParaApicePulo
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4500711155153113505, guid: 841fa9757669c1e4e83f0aface68082c,
         type: 3}
@@ -1044,6 +1035,31 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -190.21
       objectReference: {fileID: 0}
+    - target: {fileID: 1346544293239713299, guid: 7088182a838a3554d8e1850164a280bd,
+        type: 3}
+      propertyPath: posicaoJogador
+      value: 
+      objectReference: {fileID: 258298071}
+    - target: {fileID: 3686206490983455767, guid: 7088182a838a3554d8e1850164a280bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -365.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686206490983455767, guid: 7088182a838a3554d8e1850164a280bd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686206490983455767, guid: 7088182a838a3554d8e1850164a280bd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -181.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686206490983455767, guid: 7088182a838a3554d8e1850164a280bd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4409177746056599233, guid: 7088182a838a3554d8e1850164a280bd,
         type: 3}
       propertyPath: m_Color.r
@@ -1104,6 +1120,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AllowDynamicResolution
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409177746881779254, guid: 7088182a838a3554d8e1850164a280bd,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409177746881779254, guid: 7088182a838a3554d8e1850164a280bd,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.43529415
       objectReference: {fileID: 0}
     - target: {fileID: 5546188822425429930, guid: 7088182a838a3554d8e1850164a280bd,
         type: 3}
@@ -1407,8 +1433,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1674104053
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

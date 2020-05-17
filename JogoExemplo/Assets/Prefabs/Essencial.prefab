@@ -64,12 +64,12 @@ PrefabInstance:
     - target: {fileID: 2825672212012783748, guid: d2ea9d1110920ee44bf4d14e06169a91,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 2825672212012783748, guid: d2ea9d1110920ee44bf4d14e06169a91,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 180
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 2825672212012783748, guid: d2ea9d1110920ee44bf4d14e06169a91,
         type: 3}
@@ -391,6 +391,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3083105514174808895, guid: 1c77d11ec071be841b19ed3201643865,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083105514174808895, guid: 1c77d11ec071be841b19ed3201643865,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.96657693
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083105514174808895, guid: 1c77d11ec071be841b19ed3201643865,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083105514174808895, guid: 1c77d11ec071be841b19ed3201643865,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c77d11ec071be841b19ed3201643865, type: 3}
 --- !u!224 &6812472982594992879 stripped
@@ -513,17 +533,17 @@ PrefabInstance:
     - target: {fileID: 5292622334213343465, guid: bfd280db86b9c864f955232b62735fea,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 1
+      value: 0.7490196
       objectReference: {fileID: 0}
     - target: {fileID: 5292622334213343465, guid: bfd280db86b9c864f955232b62735fea,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 1
+      value: 0.36078432
       objectReference: {fileID: 0}
     - target: {fileID: 5292622334213343465, guid: bfd280db86b9c864f955232b62735fea,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.43529415
+      value: 0.454902
       objectReference: {fileID: 0}
     - target: {fileID: 5292622334213343465, guid: bfd280db86b9c864f955232b62735fea,
         type: 3}
@@ -560,6 +580,12 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5292622335036426270, guid: bfd280db86b9c864f955232b62735fea,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8320809161319005605, guid: c000b364c904c2e4890ddfeef097c5d1,
+        type: 3}
     - target: {fileID: 5292622335036426271, guid: bfd280db86b9c864f955232b62735fea,
         type: 3}
       propertyPath: m_LocalPosition.x

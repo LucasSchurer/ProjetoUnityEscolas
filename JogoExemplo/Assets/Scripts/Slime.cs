@@ -35,7 +35,7 @@ public class Slime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (controlador.colisoes.abaixo)
+        if (controlador.colisoes.abaixo || controlador.colisoes.acima)
             velocidade.y = 0f;
 
         if (contadorTempoEntrePulos <= 0 && controlador.colisoes.abaixo)

@@ -1,46 +1,61 @@
 fileFormatVersion: 2
-guid: 6ceb295e63b15424e9e07e988d897c22
+guid: 61d54d2e0a056204d9e296a82f2206e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8320809161319005605
-    second: Jogador_0
+      213: 3213631633370960976
+    second: Tilemap_1_0
   - first:
-      213: 8024827079500489267
-    second: Jogador_1
+      213: -9186344619271714555
+    second: Tilemap_1_1
   - first:
-      213: -6363220265000664707
-    second: Jogador_2
+      213: 2214141250321915394
+    second: Tilemap_1_2
   - first:
-      213: 1010659573369939675
-    second: Jogador_3
+      213: -1935675538698510539
+    second: Tilemap_1_3
   - first:
-      213: -9148033121905759976
-    second: Jogador_4
+      213: -1925007708904077258
+    second: Tilemap_1_4
   - first:
-      213: 3648547401449336718
-    second: Jogador_5
+      213: -5608839088964604527
+    second: Tilemap_1_5
   - first:
-      213: 427908547494917899
-    second: Jogador_0
+      213: 8428197965243866682
+    second: Tilemap_1_6
   - first:
-      213: 8349621564270713805
-    second: Jogador_1
+      213: -8293809176416867281
+    second: Tilemap_1_7
   - first:
-      213: 3321946506301823486
-    second: Jogador_2
+      213: 2049591091555402255
+    second: Tilemap_1_8
   - first:
-      213: -411321725489487407
-    second: Jogador_3
+      213: -7708920532220806285
+    second: Tilemap_0
   - first:
-      213: 9012835177108213625
-    second: Jogador_4
+      213: 4564998844612868550
+    second: Tilemap_1
   - first:
-      213: -893085961254606677
-    second: Jogador_5
+      213: -4247985510503474263
+    second: Tilemap_2
   - first:
-      213: 2533168562736932526
-    second: Jogador_6
+      213: 6623730380747189143
+    second: Tilemap_3
+  - first:
+      213: 57347999071926559
+    second: Tilemap_4
+  - first:
+      213: -9127936476011297880
+    second: Tilemap_5
+  - first:
+      213: 3775355368486569077
+    second: Tilemap_6
+  - first:
+      213: 6908732097058694728
+    second: Tilemap_7
+  - first:
+      213: -1706084216362820205
+    second: Tilemap_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -84,7 +99,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 320
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,7 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jogador_0
+      name: Tilemap_0
       rect:
         serializedVersion: 2
         x: 0
@@ -152,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b07b9c98e8c30f500800000000000000
-      internalID: 427908547494917899
+      spriteID: 37b734b9e99640590800000000000000
+      internalID: -7708920532220806285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jogador_1
+      name: Tilemap_1
       rect:
         serializedVersion: 2
         x: 320
@@ -173,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcb1c431390dfd370800000000000000
-      internalID: 8349621564270713805
+      spriteID: 6c9f73543422a5f30800000000000000
+      internalID: 4564998844612868550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jogador_2
+      name: Tilemap_2
       rect:
         serializedVersion: 2
         x: 640
@@ -194,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef958fe3fbce91e20800000000000000
-      internalID: 3321946506301823486
+      spriteID: 9ab1f6b5faf1c05c0800000000000000
+      internalID: -4247985510503474263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jogador_3
+      name: Tilemap_3
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d16cc7e111ba4af0800000000000000
-      internalID: -411321725489487407
+      spriteID: 79b2660ffa73ceb50800000000000000
+      internalID: 6623730380747189143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jogador_4
+      name: Tilemap_4
       rect:
         serializedVersion: 2
         x: 320
@@ -236,14 +251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f0eae67d5041d70800000000000000
-      internalID: 9012835177108213625
+      spriteID: f19f24983bdbbc000800000000000000
+      internalID: 57347999071926559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jogador_5
+      name: Tilemap_5
       rect:
         serializedVersion: 2
         x: 640
@@ -257,14 +272,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba8e78dcc0f1b93f0800000000000000
-      internalID: -893085961254606677
+      spriteID: 8a3040f032e035180800000000000000
+      internalID: -9127936476011297880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jogador_6
+      name: Tilemap_6
       rect:
         serializedVersion: 2
         x: 0
@@ -278,8 +293,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea62f12f26f972320800000000000000
-      internalID: 2533168562736932526
+      spriteID: 574818774b1c46430800000000000000
+      internalID: 3775355368486569077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846e58dfc3fb0ef50800000000000000
+      internalID: 6908732097058694728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d1bc6c175c258e0800000000000000
+      internalID: -1706084216362820205
       vertices: []
       indices: 
       edges: []

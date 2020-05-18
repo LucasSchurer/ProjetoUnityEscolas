@@ -52,11 +52,9 @@ public class Jogador : MonoBehaviour
     {
         // Experimente o código e depois remova o comentário do trecho abaixo. Consegue notar o que mudou? *Para remover múltiplas linhas remova o /* e o */.
         
-        if (controlador.colisoes.abaixo)
+        if (controlador.colisoes.abaixo || controlador.colisoes.acima)
             velocidade.y = 0f;
             
-        
-
         // Armazena o estado do personagem em um atributo dessa classe. Você consegue visualizar ele no Inspector enquanto o jogo roda :D Útil para entender se a sua movimentação está correta.
         estaNoChao = controlador.colisoes.abaixo;
 
@@ -159,8 +157,10 @@ public class Jogador : MonoBehaviour
             Morrer();
 
         // Movemos nosso jogador para a direção contrária de onde está olhando ao receber dano.
-        float forcaRecuo = 15f;
+        float forcaRecuo = 30f;
         velocidade.x = forcaRecuo * (direcaoOlhar == Direcao.Direita ? -1 : 1);
+
+        animador.SetTrigger("levouDano");
     }
 
     private void Morrer()
